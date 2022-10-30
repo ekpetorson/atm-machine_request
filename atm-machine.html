@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+    <body>
+        <script>
+            function atmMachine() {
+                function calculateAmount() {
+                    var availableBalance = 5000;
+                    var a = inquiry(availableBalance);
+                    var b = deposit(availableBalance);
+                    var c = withdrawal(availableBalance);
+                    if (a) {
+                        availableBalance = inquiry(availableBalance);
+                    }
+                    else if(b){
+                        availableBalance = availableBalance - withdrawal;
+                        if (withdrawal > availableBalance) {
+                            alert("You have insufficient funds");
+                        } 
+                    }
+                    else {
+                        availableBalance = availableBalance + deposit;
+                    }
+                    return availableBalance;
+                }
+
+                var name = prompt("Enter Your Name");
+                var passTry = 4;
+                var bankName = prompt("What isyour bank name?");
+                var passWord = prompt(`please ${name} enter your 4 digit pin`);
+                var correctPassWord = (/^[0-9]${4}/);
+
+                function checkPassWord(password){
+                    if (correct_pass.test(passwordEntered)) {
+                        optionmenu();
+                    }else{
+                        passTry = 3;
+                        while(!(correct_pass.test(passwordEntered)))
+                        alert("You do nothave a valid PIN, please input the correct one");
+                        alert(`You have only ${passtry} tries`);
+                        passTry = -1;
+
+                        if (passTry === 0) {
+                            alert("Maximum tries has been exceeded, your bank has been shutdown")
+                        }
+                    }
+                }
+            }
+    </body>
+</html>
